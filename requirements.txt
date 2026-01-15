@@ -1,0 +1,8 @@
+streamlit
+opencv-python
+deepface
+pandas
+numpy
+plotly
+tf-keras
+watchdog
