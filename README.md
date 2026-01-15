@@ -38,3 +38,35 @@ By analyzing facial cues (Age, Gender, Emotion) in real-time, it builds an immed
 ```bash
 git clone [https://github.com/addyras/-ContextReel-Multimodal-Biometric-Recommendation-Engine.git](https://github.com/addyras/-ContextReel-Multimodal-Biometric-Recommendation-Engine.git)
 cd -ContextReel-Multimodal-Biometric-Recommendation-Engine
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+
+Due to GitHub file size limits, the actual video clips are not included in this repository. To run the application locally, you must create a videos folder in the root directory and add sample .mp4 files into category subfolders:
+ContextReel_Project/
+├── app.py
+├── ...
+└── videos/              <-- Create this folder
+    ├── comedy/          <-- Add 3-4 funny videos here
+    ├── tech/            <-- Add 3-4 tech videos here
+    ├── gym/             <-- Add 3-4 fitness videos here
+    ├── gaming/          <-- Add 3-4 gaming videos here
+    └── ... (other categories: food, relax, makeup, news)
+
+To launch the interactive Web UI:
+streamlit run app.py
+
+To run the evaluation notebook:
+jupyter notebook ContextReel_Walkthrough.ipynb
+
+🛠️ Technologies Used
+Frontend: Streamlit
+
+Computer Vision: DeepFace (TensorFlow/Keras/OpenCV)
+
+Data Processing: Pandas, NumPy
+
+Visualization: Plotly (Radar Charts & Metrics)
+
+Logic: Epsilon-Greedy Reinforcement Learning
