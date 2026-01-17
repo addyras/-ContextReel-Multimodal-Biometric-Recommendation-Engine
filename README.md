@@ -1,72 +1,179 @@
-# -ContextReel-Multimodal-Biometric-Recommendation-Engine
-A Zero-Shot recommendation engine that solves the 'Cold Start' problem using real-time facial emotion recognition and Reinforcement Learning. Your face is your login, your mood is the algorithm
-
-# ContextReel: Multimodal Biometric Recommendation Engine
-
-**Student:** Aditya Rastogi
-**Student Code:** iitrpr_ai_25010952
-**Course:** Minor in Artificial Intelligence (IIT Ropar)
-**Module:** E (AI Applications)
+# 🎬 ContextReel  
+### Multimodal Biometric Recommendation Engine  
+**Your Face is the Login. Your Mood is the Algorithm.**
 
 ---
 
-## 📌 Project Overview
-**ContextReel** is a multimodal recommendation engine designed to solve the "Context Blindness" of traditional streaming platforms. While apps like Netflix rely on months of history to know what you like, ContextReel uses Computer Vision to understand how you feel *right now*.
+![ContextReel Banner](https://img.shields.io/badge/AI-Computer%20Vision%20%7C%20Reinforcement%20Learning-blue)
+![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red)
+![Status](https://img.shields.io/badge/Status-Working%20Prototype-success)
 
-By analyzing facial cues (Age, Gender, Emotion) in real-time, it builds an immediate "Context Vector" to serve relevant content instantly—no login history required. As you interact, a Reinforcement Learning agent takes over, seamlessly transitioning from biometric heuristics to personalized adaptation.
+---
 
-### Key Features
-* **Biometric Login:** No passwords. Your face is your context (Age, Gender, Emotion Detection).
-* **Mood Regulation:** Detects negative emotions (e.g., Sad) and suggests mood-lifting content (e.g., Comedy).
-* **Reinforcement Learning:** Uses an Epsilon-Greedy bandit algorithm to adapt to user preferences (Likes/Dislikes) in real-time.
-* **Explainable AI:** Displays exactly *why* a video was recommended (e.g., *"Detected Sadness -> Suggesting Comedy"*).
+## 🧠 What is ContextReel?
+
+**ContextReel** is a next-generation recommendation engine that solves the **Cold Start** and **Context Blindness** problems in traditional streaming platforms.
+
+Unlike Netflix or YouTube—which require weeks of interaction history—ContextReel understands **who you are and how you feel right now**, using **real-time facial analysis** and **Reinforcement Learning**.
+
+> No login history.  
+> No preferences asked.  
+> Just instant personalization.
+
+---
+
+## 🚀 Core Idea
+
+Traditional systems ask:
+> *“What did you like in the past?”*
+
+ContextReel asks:
+> **“Who are you right now?”**
+
+It builds a **Context Vector** using:
+- 👤 **Demographics** (Age, Gender)
+- 🙂 **Emotion** (Real-time facial expression)
+- 🧠 **Reinforcement Learning** (Likes & Dislikes)
+
+Then smoothly transitions from **biometric heuristics → personalized intelligence**.
+
+---
+
+## ✨ Key Features
+
+### 🔐 Biometric Cold Start
+- Face scan at startup (no history required)
+- Determines **initial content category**
+- Solves the *first-user problem*
+
+---
+
+### 🙂 Emotion-Aware Recommendations
+- Real-time facial emotion detection
+- Supports **Mood Regulation** & **Mood Congruency**
+- Example:
+  > *Sad → Comedy*  
+  > *Angry → Relax*  
+
+---
+
+### 🧠 Reinforcement Learning (Bandit Model)
+- **Epsilon-Greedy Strategy**
+- Likes/Dislikes update category weights
+- Smart epsilon decay with **mood-shock override**
+- Learns continuously during the session
+
+---
+
+### 🔍 Explainable AI (XAI)
+Every recommendation explains itself:
+Detected SAD → Regulation Strategy → COMEDY
+Decision Source: Biometric (Mood Shift)
+
+yaml
+Copy code
+
+No black-box behavior.
+
+---
+
+### 📊 Live Analytics Dashboard
+- User preference weights (normalized)
+- Emotion radar chart
+- Mood timeline over session
+
+---
+
+## 🏗️ System Architecture
+
+Camera Input
+↓
+DeepFace (Age | Gender | Emotion)
+↓
+Context Vector
+↓
+Decision Engine
+(Biometric Logic + RL)
+↓
+Video Recommendation
+↓
+User Feedback (Like / Dislike)
+↓
+Policy Update
+
+yaml
+Copy code
+
+---
+
+## 🧪 Technologies Used
+
+| Layer | Tools |
+|-----|------|
+| Frontend | Streamlit |
+| Computer Vision | DeepFace, OpenCV |
+| ML Logic | Reinforcement Learning (Epsilon-Greedy Bandit) |
+| Data | Pandas, NumPy |
+| Visualization | Plotly |
+| Persistence | JSON |
 
 ---
 
 ## 📂 Repository Structure
-* **`app.py`**: The main interactive Web Application (Streamlit).
-* **`ContextReel_Walkthrough.ipynb`**: The core logic walkthrough and evaluation notebook (Primary Submission Artifact).
-* **`user_profile.json`**: Persistent storage for RL model weights.
-* **`test_face.jpg`**: Sample image used for demonstrating the biometric pipeline in the notebook.
-* **`requirements.txt`**: List of Python dependencies.
+
+ContextReel/
+│
+├── app.py # Streamlit Web App
+├── ContextReel_Walkthrough.ipynb # Logic & Evaluation Notebook
+├── user_profile.json # Persistent RL Memory
+├── test_face.jpg # Demo face image
+├── requirements.txt
+└── videos/ # Local video database
+├── comedy/
+├── tech/
+├── gym/
+├── gaming/
+├── relax/
+├── food/
+├── makeup/
+└── news/
+
+yaml
+Copy code
 
 ---
 
-## 🚀 Setup & Installation
+## ⚙️ Installation & Setup
 
-### 1. Clone the Repository
+### 1️⃣ Clone Repository
 ```bash
-git clone [https://github.com/addyras/-ContextReel-Multimodal-Biometric-Recommendation-Engine.git](https://github.com/addyras/-ContextReel-Multimodal-Biometric-Recommendation-Engine.git)
-cd -ContextReel-Multimodal-Biometric-Recommendation-Engine
-
-### 2. Install Dependencies
-```bash
+git clone https://github.com/addyras/ContextReel-Multimodal-Biometric-Recommendation-Engine.git
+cd ContextReel-Multimodal-Biometric-Recommendation-Engine
+2️⃣ Install Dependencies
+bash
+Copy code
 pip install -r requirements.txt
+3️⃣ Add Video Dataset
+Due to GitHub file size limits, videos are not included.
 
-Due to GitHub file size limits, the actual video clips are not included in this repository. To run the application locally, you must create a videos folder in the root directory and add sample .mp4 files into category subfolders:
-ContextReel_Project/
-├── app.py
-├── ...
-└── videos/              <-- Create this folder
-    ├── comedy/          <-- Add 3-4 funny videos here
-    ├── tech/            <-- Add 3-4 tech videos here
-    ├── gym/             <-- Add 3-4 fitness videos here
-    ├── gaming/          <-- Add 3-4 gaming videos here
-    └── ... (other categories: food, relax, makeup, news)
+Create this structure:
 
-To launch the interactive Web UI:
+Copy code
+videos/
+ ├── comedy/   (3–4 videos)
+ ├── tech/
+ ├── gym/
+ ├── gaming/
+ ├── relax/
+ ├── food/
+ ├── makeup/
+ └── news/
+4️⃣ Run the Application
+bash
+Copy code
 streamlit run app.py
-
-To run the evaluation notebook:
+5️⃣ Run Evaluation Notebook
+bash
+Copy code
 jupyter notebook ContextReel_Walkthrough.ipynb
 
-🛠️ Technologies Used
-Frontend: Streamlit
-
-Computer Vision: DeepFace (TensorFlow/Keras/OpenCV)
-
-Data Processing: Pandas, NumPy
-
-Visualization: Plotly (Radar Charts & Metrics)
-
-Logic: Epsilon-Greedy Reinforcement Learning
